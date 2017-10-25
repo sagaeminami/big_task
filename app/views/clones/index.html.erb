@@ -1,0 +1,21 @@
+<h1>ブログ一覧</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th></th>
+  </tr>
+
+<% @clones.each do |clone| %>
+  <tr>
+    <td><%= clone.contents  %></td>
+    <td><%= link_to '詳細を確認する', clone_path(clone.id) %></td>
+    <td><%= link_to 'ツイートを編集する', edit_clone_path(clone.id)%></td>
+    <td><%= link_to 'ツイートを削除する', clone_path(clone.id),method: :delete, data: { confirm: 'Are you sure?' }%></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to '新しくブログを投稿する', new_clone_path %>

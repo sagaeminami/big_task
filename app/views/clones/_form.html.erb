@@ -1,0 +1,19 @@
+<%= form_with(model: @clone, local: true) do |form| %>
+  <% if @clone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @clone.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @clone.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="clone_title">
+    <%= form.label :contents %>
+    <%= form.text_field :contents %>
+  </div>
+  <%= form.submit %>
+<% end %>

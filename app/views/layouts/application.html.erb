@@ -3,12 +3,23 @@
   <head>
     <title>TwClone</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width"> 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="bg-primary ">
+      <ul>
+        <li><%= link_to '#トップページ', clones_path %></li>
+      </ul>
+    </header>
     <%= yield %>
+    <footer class="bg-primary">
+      <p>大課題１</p>
+      <p>© 2015-2016 Copyright DIVE INTO CODE Corp.</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+    <script src="js/jquery.spectrum.js"></script> 
   </body>
 </html>

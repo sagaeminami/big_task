@@ -15,6 +15,11 @@ class ClonesController < ApplicationController
   def edit
   end
   
+  def confirm
+    @clone = Clone.new(clone_params) # <=POSTされたパラメータを取得
+  end
+  
+  
   def update
     if @clone.update(clone_params)
       redirect_to clones_path, notice:"ツイートを編集しました"
@@ -25,7 +30,7 @@ class ClonesController < ApplicationController
   
   def create
     @clone = Clone.new(clone_params)
-    if @clone.save
+    if  @clone.save
       redirect_to clones_path, notice:"ツイートしました！"
     else
       render 'new'
@@ -41,6 +46,7 @@ class ClonesController < ApplicationController
   def set_clone
     @clone = Clone.find(params[:id])
   end
+  
   
   private
   def clone_params

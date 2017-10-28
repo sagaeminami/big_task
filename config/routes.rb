@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :clones
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/',  to:'clones#index'
+  patch '/clones/:id' => 'clones#update'  
+  resources :clones do
+    collection do
+    post 'confirm'
+    end
+  end
 end

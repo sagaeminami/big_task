@@ -3,7 +3,6 @@
 <%= form_for(@clone) do |f| %>
   <!-- `f.hidden_field`を使用して、リクエストパラメータに値を設定できるようにしています。 -->
   <%= f.hidden_field :contents  %>
-
   <!-- @blog.titleと@blog.contentとすることで、表示用の値を画面に出力しています。 -->
   <p>本文:<%= @clone.contents %></p>
   <%= f.submit "登録する" %>

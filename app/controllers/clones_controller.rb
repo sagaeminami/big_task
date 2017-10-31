@@ -1,5 +1,6 @@
 class ClonesController < ApplicationController
   before_action :set_clone, only: [:show,:edit,:update,:destroy]
+  before_action :logged_in_user, only: [:new,:edit,:show]
   
   def index
     @clones = Clone.all
@@ -45,6 +46,13 @@ class ClonesController < ApplicationController
   
   def set_clone
     @clone = Clone.find(params[:id])
+  end
+  
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "ログインしてください"
+      redirect_to new_session_path
+    end
   end
   
   

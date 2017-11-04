@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+
+      <% @favorite_clones.each do |clone| %>
+      <div class="favorite-panel col-xs-12 col-md-4 col-md-offset-4">
+
+      <h2>🌟<%= clone.contents %></h2>
+      <p><%= clone.created_at %></p>
+
+        </div>
+      <% end %>
+
+  </div>
+</div>

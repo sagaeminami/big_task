@@ -1,19 +1,20 @@
 
 <div class="container">
-  <article class-"tweet row"> 
+  <article class-"tweet row">
       <% @clones.each do |clone| %>
         <div class-"blog-panel col-xs-12 col-md-4 col-md-offset-4">
           <h2><%= clone.contents %></h2>
           <p><%= clone.created_at %></p>
-          <%= link_to 'Show', clone_path(clone.id)  %> |
-          <%= link_to 'Edit', edit_clone_path(clone.id)%> |
-          <%= link_to 'Destroy', clone_path(clone.id),method: :delete, data: { confirm: 'Are you sure?' }%>
+
+                    <% if clone.user_id == current_user.id %>
+                      <%= link_to 'Show', clone_path(clone.id)  %> |
+                      <%= link_to 'Edit', edit_clone_path(clone.id)%> |
+                      <%= link_to 'Destroy', clone_path(clone.id),method: :delete, data: { confirm: 'Are you sure?' }%>
+                    <% else %>
+                      <%= link_to 'Show', clone_path(clone.id)  %> 
+                    <% end %>
+
         </div>
       <% end %>
   </article>
 </div>
-
-  
-
-
-

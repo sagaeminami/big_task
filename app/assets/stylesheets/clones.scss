@@ -2,6 +2,8 @@ li{
   list-style:none;
 }
 
+
+
 .navbar-default {
   background-color: #fff;
   border-color: #e7e7e7;
@@ -17,18 +19,12 @@ li{
 .nav navbar-nav{
   font-weight: bold;
   box-shadow:1px 1px 3px;
+  color: #ff
 }
 
 .navbar-brand{
   font-size: 14px;
 }
-
-
-
-
-
-
-
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -59,7 +55,6 @@ li{
 
 
 .clone_contents{
-
   border-color: #e7e7e7;
 }
 
@@ -74,4 +69,20 @@ article{
   background-color:#fff;
   border-color:#e7e7e7;
   box-shadow:1px 1px 3px;
+}
+
+.btn{
+  height:45px;
+  margin:5px 5px;
+  margin-bottom: 10px;
+
+}
+
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+
+.favorite-panel{
+  width: 300px;
+  background-color: #fff;
 }

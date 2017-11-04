@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030043137) do
+ActiveRecord::Schema.define(version: 20171101051045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,29 @@ ActiveRecord::Schema.define(version: 20171030043137) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "contents"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_clones_on_user_id"
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_employees_on_company_id"
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "clone_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,4 +53,6 @@ ActiveRecord::Schema.define(version: 20171030043137) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "clones", "users"
+  add_foreign_key "employees", "companies"
 end

@@ -23,7 +23,7 @@ header ul a {
   text-decoration: none;
   color: white;
   font-size: 30px;
-  font-weight: bold; 
+  font-weight: bold;
   font-family: Impact,Charcoal;
 }
 
@@ -53,7 +53,7 @@ footer {
 html {
   position: relative;
   min-height: 100%;
-  
+
 }
 
 
@@ -62,7 +62,5 @@ body {
   text-align: center;
   background-color: #F0F0F0;
   color: #666666;
-  
+
 }
-
-
